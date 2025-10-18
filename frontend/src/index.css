@@ -1,0 +1,222 @@
+/* full-bleed background with dark overlay for contrast */
+body { 
+  /* overlay first, then image from public/ */
+  background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('/auth-bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  /* optional if you want the image to stay fixed during scroll */
+  /* background-attachment: fixed; */
+}:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* color palette */
+  --bg: #070707; /* page background */
+  --panel: #232323; /* card background */
+  --muted-panel: #1e1e1e;
+  --input-bg: #ffffff;
+  --accent: #21c96a; /* green accent */
+  --text: rgba(255,255,255,0.92);
+
+  color-scheme: light dark;
+  color: var(--text);
+  background-color: var(--bg);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+  /* background image for auth pages */
+  background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('/auth-bg.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+
+/* Header / nav */
+.site-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 1rem 2.5rem; /* give a bit more right space */
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  box-sizing: border-box;
+}
+.site-header .brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text);
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+.site-header .brand { justify-self: start }
+.site-header .nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-self: center; /* ensure nav stays centered */
+  color: rgba(255,255,255,0.9);
+}
+.site-header .nav a { color: rgba(255,255,255,0.85); text-decoration: none; }
+.site-header .actions { display:flex; gap:1rem; align-items:center; justify-self: end }
+.btn-list { background: var(--accent); color: #07100b; padding: .5rem .9rem; border-radius: 999px; font-weight:600 }
+
+/* logo in the header, left side */
+.site-logo {
+  height: 44px;            /* adjust as needed */
+  width: auto;
+  display: block;
+  object-fit: contain;
+  margin-right: 12px;
+  z-index: 60;
+}
+
+/* optionally make header brand area smaller and align nicely */
+.site-header .brand {
+  display:flex;
+  align-items:center;
+  gap:0.75rem;
+}
+
+/* Auth form */
+.auth-wrap { display:flex; flex-direction:column; align-items:center; justify-content:flex-start; padding:3rem 1rem 4rem; width:100%; margin-top:72px }
+.auth-card {
+  width: 420px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.25));
+  border-radius: 18px;
+  padding: 1.25rem 1.5rem 2rem;
+  box-shadow: 0 8px 0 rgba(0,0,0,0.65), inset 0 0 0 6px rgba(255,255,255,0.02);
+  border: 6px solid rgba(0,0,0,0.6);
+}
+.auth-title {
+  font-size: 1.9rem;
+  color: var(--accent);
+  font-weight: 800;
+  text-align:center;
+  padding: .6rem .75rem;
+  border-radius: 28px;
+  background: rgba(0,0,0,0.6);
+  margin: 0 auto 1rem;
+  width: 80%;
+}
+.auth-fields { display:flex; flex-direction:column; gap:1rem; padding: .5rem 0 }
+.auth-input {
+  height:40px; /* slimmer pill */
+  border-radius: 999px;
+  background: var(--input-bg);
+  padding: 0 0.95rem;
+  font-weight:600;
+  color: #111; /* typing visible in dark */
+  border: none;
+  /* thinner outer ring and lighter inset for a slimmer appearance */
+  box-shadow: 0 0 0 3px rgba(110,110,110,0.18),
+              0 4px 0 rgba(0,0,0,0.12) inset;
+}
+
+.auth-input::placeholder { color: #8b8b8b; opacity: 1 }
+
+.auth-input:focus {
+  outline: none;
+  /* keep gray ring and add a thin green inner line to match reference */
+  box-shadow: 0 0 0 4px rgba(110,110,110,0.22),
+              inset 0 0 0 3px rgba(33,201,106,0.95);
+}
+.auth-row { display:flex; align-items:center; justify-content:space-between }
+.auth-actions { margin-top:1rem; text-align:left; color: #66d191; font-weight:600 }
+.btn-primary { width:100%; margin-top:1rem; background: var(--accent); color: #07100b; padding: .9rem; border-radius: 999px; border: 6px solid rgba(0,0,0,0.6); font-weight:700 }
+
+/* eye button inside inputs */
+.input-with-toggle { position:relative }
+.toggle-eye {
+  position:absolute;
+  right:14px;
+  top:50%;
+  transform:translateY(-50%);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(0,0,0,0.18);
+  cursor: pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:30px;
+  height:30px;
+  padding:0;
+  color: #ffffff; /* default eye icon white for visibility */
+  z-index: 3;
+  border-radius: 999px;
+  transition: color 120ms ease, background-color 120ms ease, transform 120ms ease;
+}
+.toggle-eye svg { width:14px; height:14px; display:block; }
+.toggle-eye:focus { outline: none }
+.input-with-toggle .auth-input { padding-right:56px }
+.toggle-eye:hover { color: var(--accent); background: rgba(33,201,106,0.08); border-color: rgba(33,201,106,0.22) }
+
+.muted-link { color: #7aae84; text-decoration:none; display:block; margin-top:.6rem }
+
+/* small responsive tweaks */
+@media (max-width: 520px) {
+  .auth-card { width: 94%; padding:1rem }
+  .auth-title { font-size:1.4rem }
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
