@@ -30,3 +30,16 @@ verify: check in Mysql workbench the default tables of djano are visible or not
 10. create superuser function and create super user: python manage.py createsuperuser, python manage.py runserver
 
 11. create a urls.py file in events app
+add : 
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    # add more paths as needed
+]
+
+12. Add events.urls inside ticketing_project.urls: path('api/events/', include('events.urls')),
+
+13. update events/admin.py
+
+14. 
