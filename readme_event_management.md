@@ -26,6 +26,8 @@ python manage.py makemigrations,
 python manage.py migrate
 
 verify: check in Mysql workbench the default tables of djano are visible or not
+Test your database connection through Django: python manage.py dbshell
+(If it opens a MySQL prompt without errors — your database connection is working perfectly.)
 
 10. create superuser function and create super user: python manage.py createsuperuser, python manage.py runserver
 
@@ -43,3 +45,6 @@ urlpatterns = [
 13. update events/admin.py
 
 14. write codes for serializer.py 
+
+15. add codes in views.py (Create API views)
+
