@@ -14,3 +14,13 @@ create new app: python manage.py startapp events
 
 6. create database in MySql workbench
 Add username, password, databse name inside ticketing_project/ setting.py --> DATABASE
+
+7. create serialer.py in events app
+
+8. create customuser: setting.py --> below INSTALLED_APPS (AUTH_USER_MODEL = 'events.CustomUser')
+
+9. create models in models.py
+
+10. create superuser function and create super user
+
+11. create a urls.py file in events app
