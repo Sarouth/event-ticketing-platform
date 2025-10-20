@@ -15,7 +15,7 @@ create new app: python manage.py startapp events
 6. create database in MySql workbench
 Add username, password, databse name inside ticketing_project/ setting.py --> DATABASE
 
-7. create serialer.py in events app
+7. create serialer.py in events app (A serializer is used to convert complex Django model objects (like Category, Event, etc.) into JSON format — which APIs can send to the frontend or other applications.)
 
 8. create customuser: setting.py --> below INSTALLED_APPS (AUTH_USER_MODEL = 'events.CustomUser')
 
@@ -42,4 +42,4 @@ urlpatterns = [
 
 13. update events/admin.py
 
-14. 
+14. write codes for serializer.py 
