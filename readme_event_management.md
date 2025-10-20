@@ -15,18 +15,18 @@ create new app: python manage.py startapp events
 6. create database in MySql workbench
 Add username, password, databse name inside ticketing_project/ setting.py --> DATABASE
 
-Migration: 
-python manage.py makemigrations
-python manage.py migrate
-
-verify: check in Mysql workbench the default tables of djano are visible or not
-
 7. create serialer.py in events app
 
 8. create customuser: setting.py --> below INSTALLED_APPS (AUTH_USER_MODEL = 'events.CustomUser')
 
 9. create models in models.py
 
-10. create superuser function and create super user
+Migration: 
+python manage.py makemigrations, 
+python manage.py migrate
+
+verify: check in Mysql workbench the default tables of djano are visible or not
+
+10. create superuser function and create super user: python manage.py createsuperuser, python manage.py runserver
 
 11. create a urls.py file in events app
