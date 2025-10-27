@@ -1,0 +1,2 @@
+Example (assuming you’ll later have a Booking model and a view to handle creation):
+this came after creation of folder "bookings inside main app"

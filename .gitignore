@@ -1,0 +1,2 @@
+#added to not to show .env file to everyone, cause its'privacy
+.env
